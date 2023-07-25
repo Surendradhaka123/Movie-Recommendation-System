@@ -11,6 +11,9 @@ from tmdbv3api import Movie
 tmdb = TMDb()
 tmdb.api_key = st.secrets["key"]
 
+count=0
+suggestion=0
+
 page_bg_img = '''
 <style>
 [data-testid="stAppViewContainer"]{
@@ -72,7 +75,8 @@ def recommend(movie):
 
 st.title(':red[Movie Recommendation System]')
 
-suggestion = 0
+if(count==1):
+  suggestion = 1
 movie_list = movies['movie_title'].values
 selected_movie = st.selectbox(":red[Type or select a movie from the dropdown]",movie_list)
 if st.button('Show Recommendation'):
@@ -148,8 +152,8 @@ font-size:50px ; font-family: 'Cooper Black'; color: #FF9633;}
 </style> """, unsafe_allow_html=True)
 st.markdown('<p class="font">You may also like</p>', unsafe_allow_html=True)
 
-
 if (suggestion==1):
+    count=1
     suggested_movie_name,suggested_movie_poster = recommend(recommended_movie_names[3].lower())
     
     col1, col2, col3, col4, col5 = st.columns(5)
@@ -215,8 +219,6 @@ if (suggestion==1):
             """
         st.markdown(html_str, unsafe_allow_html=True)
         st.image(suggested_movie_poster[4])
-
-suggestion=1
 
 
 
