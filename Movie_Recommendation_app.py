@@ -50,6 +50,8 @@ for file_name in split_files:
 similarity = combined_data
 movies = pickle.load(open('movie_list.pkl','rb'))
 
+recommended_movie_names = ['spy kids','godzilla resurgence','the amazing spider-man 2','timeline']
+
 def fetch_poster(movie_id):
     url = "https://api.themoviedb.org/3/movie/{}?api_key={}".format(movie_id,tmdb.api_key)
     data = requests.get(url)
@@ -147,72 +149,72 @@ font-size:50px ; font-family: 'Cooper Black'; color: #FF9633;}
 </style> """, unsafe_allow_html=True)
 st.markdown('<p class="font">You may also like</p>', unsafe_allow_html=True)
 
-if (suggestion==1):
-    suggested_movie_name,suggested_movie_poster = recommend(recommended_movie_names[3].lower())
+
+suggested_movie_name,suggested_movie_poster = recommend(recommended_movie_names[3].lower())
+
+col1, col2, col3, col4, col5 = st.columns(5)
+with col1:
+    html_str = f"""
+        <style>
+        p.a {{
+            font: bold {18}px Courier;
+            color: cyan;
+        }}
+        </style>
+        <p class="a">{suggested_movie_name[0]}</p>
+        """
+    st.markdown(html_str, unsafe_allow_html=True)
+    st.image(suggested_movie_poster[0])
     
-    col1, col2, col3, col4, col5 = st.columns(5)
-    with col1:
-        html_str = f"""
-            <style>
-            p.a {{
-                font: bold {18}px Courier;
-                color: cyan;
-            }}
-            </style>
-            <p class="a">{suggested_movie_name[0]}</p>
-            """
-        st.markdown(html_str, unsafe_allow_html=True)
-        st.image(suggested_movie_poster[0])
-        
-    with col2:
-        html_str = f"""
-            <style>
-            p.a {{
-                font: bold {18}px Courier;
-                color: cyan;
-            }}
-            </style>
-            <p class="a">{suggested_movie_name[1]}</p>
-            """
-        st.markdown(html_str, unsafe_allow_html=True)
-        st.image(suggested_movie_poster[1])
-    
-    with col3:
-        html_str = f"""
-            <style>
-            p.a {{
-                font: bold {18}px Courier;
-                color: cyan;
-            }}
-            </style>
-            <p class="a">{suggested_movie_name[2]}</p>
-            """
-        st.markdown(html_str, unsafe_allow_html=True)
-        st.image(suggested_movie_poster[2])
-    with col4:
-        html_str = f"""
-            <style>
-            p.a {{
-                font: bold {18}px Courier;
-                color: cyan;
-            }}
-            </style>
-            <p class="a">{suggested_movie_name[3]}</p>
-            """
-        st.markdown(html_str, unsafe_allow_html=True)
-        st.image(suggested_movie_poster[3])
-    with col5:
-        html_str = f"""
-            <style>
-            p.a {{
-                font: bold {18}px Courier;
-                color: cyan;
-            }}
-            </style>
-            <p class="a">{suggested_movie_name[4]}</p>
-            """
-        st.markdown(html_str, unsafe_allow_html=True)
-        st.image(suggested_movie_poster[4])
+with col2:
+    html_str = f"""
+        <style>
+        p.a {{
+            font: bold {18}px Courier;
+            color: cyan;
+        }}
+        </style>
+        <p class="a">{suggested_movie_name[1]}</p>
+        """
+    st.markdown(html_str, unsafe_allow_html=True)
+    st.image(suggested_movie_poster[1])
+
+with col3:
+    html_str = f"""
+        <style>
+        p.a {{
+            font: bold {18}px Courier;
+            color: cyan;
+        }}
+        </style>
+        <p class="a">{suggested_movie_name[2]}</p>
+        """
+    st.markdown(html_str, unsafe_allow_html=True)
+    st.image(suggested_movie_poster[2])
+with col4:
+    html_str = f"""
+        <style>
+        p.a {{
+            font: bold {18}px Courier;
+            color: cyan;
+        }}
+        </style>
+        <p class="a">{suggested_movie_name[3]}</p>
+        """
+    st.markdown(html_str, unsafe_allow_html=True)
+    st.image(suggested_movie_poster[3])
+with col5:
+    html_str = f"""
+        <style>
+        p.a {{
+            font: bold {18}px Courier;
+            color: cyan;
+        }}
+        </style>
+        <p class="a">{suggested_movie_name[4]}</p>
+        """
+    st.markdown(html_str, unsafe_allow_html=True)
+    st.image(suggested_movie_poster[4])
 
 
 
