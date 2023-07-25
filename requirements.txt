@@ -6,4 +6,4 @@ times==0.7
 scikit-learn == 1.0.2
 streamlit==1.22.0
 tmdbv3api==1.7.7
-json
+json==2.0.9
