@@ -9,7 +9,7 @@ import json
 import requests
 from tmdbv3api import Movie
 tmdb = TMDb()
-tmdb.api_key = '8265bd1679663a7ea12ac168da84d2e8&language=en-US'
+tmdb.api_key = st.secrets["key]
 
 page_bg_img = '''
 <style>
@@ -72,10 +72,12 @@ def recommend(movie):
 
 st.title(':red[Movie Recommendation System]')
 
+suggestion = 0
 movie_list = movies['movie_title'].values
 selected_movie = st.selectbox(":red[Type or select a movie from the dropdown]",movie_list)
 if st.button('Show Recommendation'):
     recommended_movie_names,recommended_movie_posters = recommend(selected_movie)
+    suggestion =1
     col1, col2, col3, col4, col5 = st.columns(5)
     with col1:
         html_str = f"""
@@ -147,72 +149,75 @@ font-size:50px ; font-family: 'Cooper Black'; color: #FF9633;}
 st.markdown('<p class="font">You may also like</p>', unsafe_allow_html=True)
 
 
-# recommended_movie_names,recommended_movie_posters = recommend(selected_movie)
-suggested_movie_name,suggested_movie_poster = recommend(recommended_movie_names[3].lower())
-
-col1, col2, col3, col4, col5 = st.columns(5)
-with col1:
-    html_str = f"""
-        <style>
-        p.a {{
-            font: bold {18}px Courier;
-            color: cyan;
-        }}
-        </style>
-        <p class="a">{suggested_movie_name[0]}</p>
-        """
-    st.markdown(html_str, unsafe_allow_html=True)
-    st.image(suggested_movie_poster[0])
+if (suggestion==1):
+    suggested_movie_name,suggested_movie_poster = recommend(recommended_movie_names[3].lower())
     
-with col2:
-    html_str = f"""
-        <style>
-        p.a {{
-            font: bold {18}px Courier;
-            color: cyan;
-        }}
-        </style>
-        <p class="a">{suggested_movie_name[1]}</p>
-        """
-    st.markdown(html_str, unsafe_allow_html=True)
-    st.image(suggested_movie_poster[1])
+    col1, col2, col3, col4, col5 = st.columns(5)
+    with col1:
+        html_str = f"""
+            <style>
+            p.a {{
+                font: bold {18}px Courier;
+                color: cyan;
+            }}
+            </style>
+            <p class="a">{suggested_movie_name[0]}</p>
+            """
+        st.markdown(html_str, unsafe_allow_html=True)
+        st.image(suggested_movie_poster[0])
+        
+    with col2:
+        html_str = f"""
+            <style>
+            p.a {{
+                font: bold {18}px Courier;
+                color: cyan;
+            }}
+            </style>
+            <p class="a">{suggested_movie_name[1]}</p>
+            """
+        st.markdown(html_str, unsafe_allow_html=True)
+        st.image(suggested_movie_poster[1])
+    
+    with col3:
+        html_str = f"""
+            <style>
+            p.a {{
+                font: bold {18}px Courier;
+                color: cyan;
+            }}
+            </style>
+            <p class="a">{suggested_movie_name[2]}</p>
+            """
+        st.markdown(html_str, unsafe_allow_html=True)
+        st.image(suggested_movie_poster[2])
+    with col4:
+        html_str = f"""
+            <style>
+            p.a {{
+                font: bold {18}px Courier;
+                color: cyan;
+            }}
+            </style>
+            <p class="a">{suggested_movie_name[3]}</p>
+            """
+        st.markdown(html_str, unsafe_allow_html=True)
+        st.image(suggested_movie_poster[3])
+    with col5:
+        html_str = f"""
+            <style>
+            p.a {{
+                font: bold {18}px Courier;
+                color: cyan;
+            }}
+            </style>
+            <p class="a">{suggested_movie_name[4]}</p>
+            """
+        st.markdown(html_str, unsafe_allow_html=True)
+        st.image(suggested_movie_poster[4])
 
-with col3:
-    html_str = f"""
-        <style>
-        p.a {{
-            font: bold {18}px Courier;
-            color: cyan;
-        }}
-        </style>
-        <p class="a">{suggested_movie_name[2]}</p>
-        """
-    st.markdown(html_str, unsafe_allow_html=True)
-    st.image(suggested_movie_poster[2])
-with col4:
-    html_str = f"""
-        <style>
-        p.a {{
-            font: bold {18}px Courier;
-            color: cyan;
-        }}
-        </style>
-        <p class="a">{suggested_movie_name[3]}</p>
-        """
-    st.markdown(html_str, unsafe_allow_html=True)
-    st.image(suggested_movie_poster[3])
-with col5:
-    html_str = f"""
-        <style>
-        p.a {{
-            font: bold {18}px Courier;
-            color: cyan;
-        }}
-        </style>
-        <p class="a">{suggested_movie_name[4]}</p>
-        """
-    st.markdown(html_str, unsafe_allow_html=True)
-    st.image(suggested_movie_poster[4])
+
+
 
 
 
