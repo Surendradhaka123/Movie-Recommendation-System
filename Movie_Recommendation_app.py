@@ -9,7 +9,7 @@ import json
 import requests
 from tmdbv3api import Movie
 tmdb = TMDb()
-tmdb.api_key = '8265bd1679663a7ea12ac168da84d2e8&language=en-US'
+tmdb.api_key = key
 
 page_bg_img = '''
 <style>
