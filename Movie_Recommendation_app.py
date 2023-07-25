@@ -216,7 +216,7 @@ if (suggestion==1):
         st.markdown(html_str, unsafe_allow_html=True)
         st.image(suggested_movie_poster[4])
 
-
+suggestion=1
 
 
 
