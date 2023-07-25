@@ -1,0 +1,9 @@
+streamlit_option_menu == 0.3.2
+requests==2.28.0
+streamlit-lottie==0.0.3
+pickle-mixin==1.0.2
+times==0.7
+scikit-learn == 1.0.2
+streamlit==1.22.0
+tmdbv3api==1.7.7
+json
