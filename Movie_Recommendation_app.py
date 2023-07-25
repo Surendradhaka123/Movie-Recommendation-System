@@ -37,8 +37,16 @@ def get_movie_id(x):
     result = tmdb_movie.search(x)
     movie_id = result[0].id
     return movie_id
+    
 
-similarity = pickle.load(open('similarity.pkl','rb'))
+split_files = ['chunk_1.pkl', 'chunk_2.pkl', 'chunk_3.pkl', 'chunk_4.pkl', 'chunk_5.pkl', 'chunk_6.pkl', 'chunk_7.pkl', 'chunk_8.pkl', 'chunk_9.pkl', 'chunk_10.pkl', 'chunk_11.pkl']  # Add the names of your split files here
+# Combine split files
+combined_data = []
+for file_name in split_files:
+    with open(file_name, 'rb') as file:
+        chunk = pickle.load(file)
+        combined_data.extend(chunk)
+similarity = combined_data
 movies = pickle.load(open('movie_list.pkl','rb'))
 
 def fetch_poster(movie_id):
