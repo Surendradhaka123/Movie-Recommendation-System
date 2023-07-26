@@ -1,6 +1,6 @@
 # Movie Recommendation System
 
-![Movie Recommendation](https://movie-recommendation-system-alidamt41f6.streamlit.app/)
+[Movie Recommendation](https://movie-recommendation-system-alidamt41f6.streamlit.app/)
 
 ## Table of Contents
 
@@ -9,6 +9,7 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [Cosine Similarity](#cosine-similarity)
+- [Web App](#web-app)
 
   
 ## Introduction
@@ -126,8 +127,14 @@ recommended_movie_names,recommended_movie_posters = recommend(selected_movie)
 
 The movie recommendation system utilizes cosine similarity to calculate the similarity between movies. Cosine similarity measures the cosine of the angle between two non-zero vectors in an n-dimensional space. In the context of movie recommendation, each movie is represented as a vector based on director name, actor's name and genres, and cosine similarity is used to find movies with similar director name, actor's name and genres patterns.
 
+## Web App
+
+I have developed the web app for the `Recommendation System` using Streamlit and deployed it on the Streamlit Cloud.
+
+Check- out  web app by following link: [WebApp](https://movie-recommendation-system-alidamt41f6.streamlit.app/)
+
 ---
-Check out my Movie Recommendation System web app by following link: WebApp[https://movie-recommendation-system-alidamt41f6.streamlit.app/]
+
 We hope this README helps you understand the Movie Recommendation System using Cosine Similarity project. If you have any questions or need further assistance, please don't hesitate to reach out.
 
 Enjoy great recommended movies!
