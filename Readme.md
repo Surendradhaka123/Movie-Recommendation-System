@@ -65,9 +65,9 @@ To use the Movie Recommendation System, follow these steps:
    Streamlit run MovieRecommendation_app.py
    ```
 
-4. If you want to train the model for your dataset then prepare your dataset in the required format.
+3. If you want to train the model for your dataset then prepare your dataset in the required format.
 
-5. Load the dataset and build the recommendation model:
+4. Load the dataset and build the recommendation model:
 
 ```python
 from sklearn.feature_extraction.text import CountVectorizer
@@ -104,7 +104,7 @@ def fetch_poster(movie_id):
 
 ```
 
-6. Get movie recommendations:
+5. Get movie recommendations:
 
 ```python
 def recommend(movie):
