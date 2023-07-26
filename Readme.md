@@ -104,7 +104,7 @@ def fetch_poster(movie_id):
 
 ```
 
-4. Get movie recommendations:
+6. Get movie recommendations:
 
 ```python
 def recommend(movie):
