@@ -27,7 +27,9 @@ The datasets used for building the movie recommendation system have contain movi
 - `Director name`
 - `Actors name`
 -  `Genres`
-- Dataset used for this model can be found on the following link[]
+- Dataset used for this model can be found on the following links:
+  1. IMDB 5000 Movie Dataset[https://www.kaggle.com/datasets/carolzhangdc/imdb-5000-movie-dataset]
+  2. The Movie Dataset[https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset]
 
 ## Installation
 
@@ -125,7 +127,7 @@ recommended_movie_names,recommended_movie_posters = recommend(selected_movie)
 The movie recommendation system utilizes cosine similarity to calculate the similarity between movies. Cosine similarity measures the cosine of the angle between two non-zero vectors in an n-dimensional space. In the context of movie recommendation, each movie is represented as a vector based on director name, actor's name and genres, and cosine similarity is used to find movies with similar director name, actor's name and genres patterns.
 
 ---
-
+Check out my Movie Recommendation System web app by following link: WebApp[https://movie-recommendation-system-alidamt41f6.streamlit.app/]
 We hope this README helps you understand the Movie Recommendation System using Cosine Similarity project. If you have any questions or need further assistance, please don't hesitate to reach out.
 
 Enjoy great recommended movies!
