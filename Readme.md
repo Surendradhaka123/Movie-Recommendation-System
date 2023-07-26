@@ -29,8 +29,8 @@ The datasets used for building the movie recommendation system have contain movi
 - `Actors name`
 -  `Genres`
 - Dataset used for this model can be found on the following links:
-  1. IMDB 5000 Movie Dataset[https://www.kaggle.com/datasets/carolzhangdc/imdb-5000-movie-dataset]
-  2. The Movie Dataset[https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset]
+  1. [IMDB 5000 Movie Dataset](https://www.kaggle.com/datasets/carolzhangdc/imdb-5000-movie-dataset)
+  2. [The Movie Dataset](https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset)
 
 ## Installation
 
